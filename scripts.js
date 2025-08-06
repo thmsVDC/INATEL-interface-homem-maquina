@@ -1,5 +1,5 @@
 // objeto do usuário
-const usuario = { nome: "Raphael", matricula: "123456", pendencia: false, acessibilidade: true };
+const usuario = { nome: "Thomas", matricula: "438", pendencia: false, acessibilidade: true };
 
 // lista objetos de armários
 const armarios = [
