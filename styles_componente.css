@@ -1,0 +1,46 @@
+:root {
+  --frequencia: #126ae2;
+  --nota: #126ae2;
+  --prova: #126ae2;  
+}
+
+.titulo_aula {
+    font-weight: bold;
+    font-size: 15px;
+    padding: 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .lables {
+    display: flex;
+  }
+  
+  .lable-prova,
+  .lable-frequencia,
+  .lable-nota {
+    background-color: var(--prova);
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    border-radius: 500px;
+    text-align: center;
+    margin-right: 10px;
+  }
+  
+  .lable-frequencia {
+    background-color: var(--frequencia);
+  }
+  
+  .lable-nota {
+    background-color: var(--nota);
+  }
+  
+  .p_lable {
+    font-size: 13px;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
