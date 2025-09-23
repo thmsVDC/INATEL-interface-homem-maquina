@@ -34,7 +34,7 @@ class AulasComponent extends HTMLElement {
       let gradeStyle = '';
       if (a.nota < 6) {
         gradeStyle = 'color: red;';
-      } else if (a.nota > 6 && a.nota < 8) {
+      } else if (a.nota >= 6 && a.nota <= 8) {
         gradeStyle = 'color: orange;';
       } else {
         gradeStyle = 'color: lightgreen;'; 
