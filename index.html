@@ -1,16 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exemplo Prático 1</title>
-  <link rel="stylesheet" href="styles_componente.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Vagas - Inatel</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
 </head>
 
 <body>
-  <aulas-component id="componente"></aulas-component>
-  <script src="script_componente.js"></script>
+  <header>
+    <h1>Portal de Vagas - Inatel</h1>
+    <p>Encontre oportunidades de estágio e emprego</p>
+  </header>
+
+  <nav>
+    <button onclick="navigate('vacancies')">Vagas</button>
+    <button onclick="navigate('my-applications')">Minhas candidaturas</button>
+  </nav>
+
+  <main>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Buscar vaga por título ou empresa...">
+    </div>
+
+    <section id="vacancies" class="page active">
+      <h2>Vagas Disponíveis</h2>
+
+      <div class="job-list" id="jobList"></div>
+    </section>
+
+    <section id="my-applications" class="page active">
+      <h2>Vagas Disponíveis</h2>
+      <div class="my-application-list" id="myApplicationsList"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2025 Instituto Nacional de Telecomunicações (Inatel)
+  </footer>
+
+
+  <script type="module" src="/static/js/scripts.js"></script>
 </body>
 
 </html>
