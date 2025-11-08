@@ -4,8 +4,7 @@ import { MyApplications } from './my_applications.js'
 import { SearchHelper } from './search_vacancy.js'
 
 window.addEventListener('load', () => {
-  const hash = window.location.hash.replace('#', '') || 'vagas';
-  navigate(hash);
+  navigate("vacancies");
 
   const sortedVacancies = vacanciesData.sort((a, b) => {
     if (a.applied !== b.applied) {
