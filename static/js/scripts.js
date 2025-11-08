@@ -1,9 +1,7 @@
-import { loadVacancies } from './vacancies.js'
-import { loadMyApplications } from './my_applications.js'
 import { vacancies } from './vacancies_json.js'
-import { searchVacancies } from './search_vacancy.js'
-
-
+import { Vacancies } from './vacancies.js'
+import { MyApplications } from './my_applications.js'
+import { SearchHelper } from './search_vacancy.js'
 
 window.addEventListener('load', () => {
   const hash = window.location.hash.replace('#', '') || 'vagas';
@@ -16,7 +14,7 @@ window.addEventListener('load', () => {
     return a.title.localeCompare(b.title);
   });
 
-  searchVacancies(sortedVacancies, loadVacancies);
+  SearchHelper.searchVacancies(sortedVacancies, Vacancies.load);
 });
 
 function navigate(pageId) {
@@ -33,11 +31,11 @@ function navigate(pageId) {
   });
 
   if (pageId === "my-applications") {
-    loadMyApplications(sortedVacancies);
-    searchVacancies(sortedVacancies, loadMyApplications);
+    MyApplications.load(sortedVacancies);
+    SearchHelper.searchVacancies(sortedVacancies, MyApplications.load);
   } else if (pageId === "vacancies") {
-    loadVacancies(sortedVacancies)
-    searchVacancies(sortedVacancies, loadVacancies);
+    Vacancies.load(sortedVacancies)
+    SearchHelper.searchVacancies(sortedVacancies, Vacancies.load);
   }
 }
 window.navigate = navigate;
