@@ -1,4 +1,4 @@
-export let vacancies = [
+export const vacanciesData = [
   { title: "Estágio em Desenvolvimento Web", company: "LEVTY", local: "Santa Rita do Sapucaí - MG", type: "Estágio", applied: false },
   { title: "QA Tester Júnior", company: "Huawei", local: "Belo Horizonte - MG", type: "Emprego", applied: false },
   { title: "Estágio em Redes", company: "Inatel Competence Center", local: "Santa Rita do Sapucaí - MG", type: "Estágio", applied: false },

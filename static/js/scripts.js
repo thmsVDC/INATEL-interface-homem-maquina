@@ -1,4 +1,4 @@
-import { vacancies } from './vacancies_json.js'
+import { vacanciesData } from './vacancies_json.js'
 import { Vacancies } from './vacancies.js'
 import { MyApplications } from './my_applications.js'
 import { SearchHelper } from './search_vacancy.js'
@@ -7,14 +7,14 @@ window.addEventListener('load', () => {
   const hash = window.location.hash.replace('#', '') || 'vagas';
   navigate(hash);
 
-  const sortedVacancies = vacancies.sort((a, b) => {
+  const sortedVacancies = vacanciesData.sort((a, b) => {
     if (a.applied !== b.applied) {
       return a.applied ? -1 : 1;
     }
     return a.title.localeCompare(b.title);
   });
 
-  SearchHelper.searchVacancies(sortedVacancies, Vacancies.load);
+  Vacancies.load(sortedVacancies)
 });
 
 function navigate(pageId) {
@@ -23,7 +23,10 @@ function navigate(pageId) {
   window.location.hash = pageId;
   window.scrollTo(0, 0);
 
-  const sortedVacancies = vacancies.sort((a, b) => {
+  const searchInput = document.getElementById('searchInput');
+  searchInput.value = "";
+
+  const sortedVacancies = vacanciesData.sort((a, b) => {
     if (a.applied !== b.applied) {
       return a.applied ? -1 : 1;
     }
